@@ -171,7 +171,6 @@ footer {
   border-bottom: 2px solid black;
 }
 .brand__type img{
-  /* height: 120%; */
   width: var(--width);
   display: block;
   margin: 5px auto;
@@ -191,6 +190,7 @@ footer {
 .footer__contact .contact {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   width: 25%;
 }
 .footer__contact .contact h3 {
@@ -217,6 +217,7 @@ footer {
 }
 .footer__information .logo__left {
   width: 15%;
+  flex-shrink: 0;
 }
 .footer__information .logo__left img {
   width: 100%;
