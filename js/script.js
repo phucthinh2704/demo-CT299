@@ -26,7 +26,6 @@ function showSlide(index) {
   }
 }
 let ord = document.getElementsByClassName("ordinal-number")[0];
-// console.log(ord);
 for (i = 0; i < showImages.length; i++) {
   let element = document.createElement("div");
   element.classList.add("mark");
@@ -59,3 +58,9 @@ setInterval(() => {
   showSlide(slideIndex);
   changeMark(slideIndex);
 }, 3500);
+
+[...mark].forEach(item => item.addEventListener("click", () => {
+  slideIndex = [...mark].indexOf(item);
+  showSlide(slideIndex);
+  changeMark(slideIndex);
+}))

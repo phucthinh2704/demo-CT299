@@ -156,6 +156,7 @@ main {
   height: 10px;
   border-radius: 100rem;
   background-color: #eee;
+  cursor: pointer;
 }
 .mark:first-child {
   background-color: #ec7e33;
