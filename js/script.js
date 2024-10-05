@@ -59,8 +59,34 @@ setInterval(() => {
   changeMark(slideIndex);
 }, 3500);
 
-[...mark].forEach(item => item.addEventListener("click", () => {
-  slideIndex = [...mark].indexOf(item);
-  showSlide(slideIndex);
-  changeMark(slideIndex);
-}))
+[...mark].forEach((item) =>
+  item.addEventListener("click", () => {
+    slideIndex = [...mark].indexOf(item);
+    showSlide(slideIndex);
+    changeMark(slideIndex);
+  })
+);
+
+let overlay = document.getElementsByClassName("overlay");
+let link_if = [
+  "https://www.youtube.com/embed/2l8_FNIBWLM?si=UWGAok652fLAqH2x&amp",
+  "https://www.youtube.com/embed/4Y1EZZnr9JI?si=PzIvGArVZoApLdrZ",
+  "https://www.youtube.com/embed/JgUWVooKSrA?si=8pLB964SPUyNBdnP",
+  "https://www.youtube.com/embed/HgDzVFMi238?si=j0brpIRnW-38rO38",
+];
+[...overlay].forEach((item) =>
+  item.addEventListener("click", () => {
+    let show = document.querySelector("#show-video");
+    let iframe = document.querySelector("iframe");
+    iframe.src = link_if[[...overlay].indexOf(item)];
+    show.style.opacity = 1;
+    show.style.visibility = "visible";
+  })
+);
+let show = document.querySelector("#show-video");
+show.addEventListener("click", () => {
+  show.style.opacity = 0;
+  show.style.visibility = "hidden";
+  let iframe = document.querySelector("iframe");
+  iframe.src = "";
+});
